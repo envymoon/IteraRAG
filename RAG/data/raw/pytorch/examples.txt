@@ -1,0 +1,3 @@
+Examples
+
+Please refer to the elastic/examples README.

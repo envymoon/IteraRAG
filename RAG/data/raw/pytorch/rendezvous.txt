@@ -1,0 +1,113 @@
+Rendezvous
+
+torch.distributed.elastic.rendezvous
+
+Below is a state diagram describing how rendezvous works.
+
+[image]
+
+Registry
+
+RendezvousParameters
+
+RendezvousHandlerRegistry
+
+torch.distributed.elastic.rendezvous.registry
+
+Handler
+
+torch.distributed.elastic.rendezvous
+
+RendezvousHandler
+
+Dataclasses
+
+RendezvousInfo
+
+torch.distributed.elastic.rendezvous.api
+
+RendezvousStoreInfo
+
+build(rank, store)
+
+Exceptions
+
+RendezvousError
+
+RendezvousClosedError
+
+RendezvousTimeoutError
+
+RendezvousConnectionError
+
+RendezvousStateError
+
+RendezvousGracefulExitError
+
+Implementations
+
+Dynamic Rendezvous
+
+torch.distributed.elastic.rendezvous.dynamic_rendezvous
+
+create_handler
+
+DynamicRendezvousHandler()
+
+RendezvousBackend
+
+RendezvousTimeout
+
+C10d Backend
+
+torch.distributed.elastic.rendezvous.c10d_rendezvous_backend
+
+create_backend
+
+C10dRendezvousBackend
+
+Etcd Backend
+
+torch.distributed.elastic.rendezvous.etcd_rendezvous_backend
+
+create_backend
+
+EtcdRendezvousBackend
+
+Etcd Rendezvous (Legacy)
+
+Warning
+
+The DynamicRendezvousHandler class supersedes the EtcdRendezvousHandler
+class, and is recommended for most users. EtcdRendezvousHandler is in
+maintenance mode and will be deprecated in the future.
+
+torch.distributed.elastic.rendezvous.etcd_rendezvous
+
+EtcdRendezvousHandler
+
+Etcd Store
+
+The EtcdStore is the C10d Store instance type returned by
+next_rendezvous() when etcd is used as the rendezvous backend.
+
+torch.distributed.elastic.rendezvous.etcd_store
+
+EtcdStore
+
+Etcd Server
+
+The EtcdServer is a convenience class that makes it easy for you to
+start and stop an etcd server on a subprocess. This is useful for
+testing or single-node (multi-worker) deployments where manually setting
+up an etcd server on the side is cumbersome.
+
+Warning
+
+For production and multi-node deployments please consider properly
+deploying a highly available etcd server as this is the single point of
+failure for your distributed jobs.
+
+torch.distributed.elastic.rendezvous.etcd_server
+
+EtcdServer

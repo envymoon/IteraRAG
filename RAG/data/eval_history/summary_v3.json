@@ -1,0 +1,1 @@
+{"Recall@k": 0.40816326530612246, "MRR": 0.6540816326530613, "Avg Context-GT Sim": 0.7427302039714401, "Avg Answer-GT Sim": 0.7673403142485973, "Avg Answer-Context Sim": 0.8541859490081826, "Hallucination Rate": 0.0}

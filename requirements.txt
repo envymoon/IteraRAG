@@ -1,0 +1,16 @@
+# computations
+torch>=2.0.0
+numpy
+scikit-learn
+pandas
+datasets
+
+# RAG and Embedding
+langchain-huggingface
+sentence-transformers
+transformers
+accelerate
+faiss
+
+# tools
+tqdm

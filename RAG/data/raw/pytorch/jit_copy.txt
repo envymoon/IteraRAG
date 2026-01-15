@@ -1,0 +1,17 @@
+TorchScript
+
+jit_language_reference jit_language_reference_v2 jit_python_reference
+jit_unsupported torch.jit.supported_ops <jit_builtin_functions>
+
+Warning
+
+TorchScript is deprecated, please use torch.export instead.
+
+torch.jit
+
+Creating TorchScript Code
+
+script trace script_if_tracing trace_module fork wait ScriptModule
+ScriptFunction freeze optimize_for_inference enable_onednn_fusion
+onednn_fusion_enabled set_fusion_strategy strict_fusion save load ignore
+unused interface isinstance Attribute annotate

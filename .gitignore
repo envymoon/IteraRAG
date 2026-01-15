@@ -1,0 +1,7 @@
+*.ipynb_checkpoints 
+judge.ipynb
+simp RAG.ipynb
+__pycache__/
+RAG.txt
+Mini-RAG/data/raw/PubMed/
+train.csv

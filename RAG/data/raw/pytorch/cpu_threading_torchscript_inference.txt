@@ -1,0 +1,5 @@
+CPU threading and TorchScript inference
+
+Warning
+
+TorchScript is deprecated, please use torch.export instead.

@@ -1,0 +1,39 @@
+torch.nn.init
+
+Warning
+
+All the functions in this module are intended to be used to initialize
+neural network parameters, so they all run in torch.no_grad mode and
+will not be taken into account by autograd.
+
+torch.nn.init
+
+calculate_gain
+
+uniform
+
+normal
+
+constant
+
+ones
+
+zeros
+
+eye
+
+dirac
+
+xavier_uniform
+
+xavier_normal
+
+kaiming_uniform
+
+kaiming_normal
+
+trunc_normal
+
+orthogonal
+
+sparse

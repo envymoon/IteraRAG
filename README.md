@@ -109,7 +109,7 @@ Below are live examples of the **Version 3** pipeline processing a complex query
 > 2. `...The newer system call employs a different structure for file locking, flock64, and corresponding operations, F_GETLK64...`
 > 3. `...However, these details can be ignored by applications using glibc, whose fcntl() wrapper function transparently employs the more recent system call...`
 >
-> **Ground Truth:** > "It was added because the original fcntl() call could not handle large file offsets in the flock structure."
+> **Ground Truth:**  "It was added because the original fcntl() call could not handle large file offsets in the flock structure."
 
 ### Example 2: Technical Documentation (PyTorch)
 This example highlights the system's ability to retrieve precise technical implementation details from the PyTorch documentation.
@@ -122,7 +122,7 @@ This example highlights the system's ability to retrieve precise technical imple
 > * **Chunk 1:** "...Forward hooks are called during the forward pass. They can be installed for a given module with `register_forward_hook`... these hooks can be used to execute arbitrary code or modify inputs/outputs without having to change the module's `forward()` function."
 > * **Chunk 2:** "...Some useful examples for this functionality include debugging, visualizing activations, examining gradients in-depth, etc. Hooks can be added to modules you haven't written yourself..."
 >
-> **Ground Truth:** > "It is used to capture or modify the input/output of a specific layer during the forward pass without altering the model's original source code (common for feature extraction)."
+> **Ground Truth:** "It is used to capture or modify the input/output of a specific layer during the forward pass without altering the model's original source code (common for feature extraction)."
 
 
 ### Example 3: Medical Literature (PubMed)
@@ -137,5 +137,5 @@ This example demonstrates the system's ability to synthesize information from mu
 > * **Source 1 (PubMed 17304887):** "At the end point, a greater decrease from baseline was observed in physician-assessed overall nasal signs and symptoms severity for the ciclesonide group compared with the placebo group (P = .051)."
 > * **Source 2 (PubMed 17304887):** "Ciclesonide therapy significantly reduced average morning and evening reflective TNSSs... and instantaneous TNSSs (P = .001) over 6 weeks of treatment."
 >
-> **Ground Truth:** > "At the end point, a greater decrease from baseline was observed in physician-assessed overall nasal signs and symptoms severity for the ciclesonide group compared with the placebo group (P = .051)."
+> **Ground Truth:**  "At the end point, a greater decrease from baseline was observed in physician-assessed overall nasal signs and symptoms severity for the ciclesonide group compared with the placebo group (P = .051)."
 >

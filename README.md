@@ -1,4 +1,4 @@
-# Multi-Stage Evolutionary RAG System & Retrieval Pipeline Optimization
+# RAG System Implementation & Retrieval Pipeline Optimization
 
 ## Project Overview
 This project aims to identify the most efficient and reliable **RAG (Retrieval-Augmented Generation)** configuration for a specific multi-source hybrid dataset. Instead of a static implementation, we explored the technological frontier through four iterative versions, using a custom quantitative scoring evaluation framework.

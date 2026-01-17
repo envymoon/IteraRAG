@@ -38,7 +38,6 @@ def hallucination_flag(ans_gt_sim, ans_ctx_sim,
     return ans_gt_sim < gt_th and ans_ctx_sim < ctx_th
 
 # Run Evaluation
-
 def run_eval(result_path, output_path):
     with open(result_path) as f:
         results = json.load(f)
@@ -89,6 +88,6 @@ def run_eval(result_path, output_path):
 
 if __name__ == "__main__":
     run_eval(
-        result_path="../data/eval/results.json",
-        output_path="../data/eval/summary.json"
+        result_path="../data/eval/results_final.json",
+        output_path="../data/eval/summary)_final.json"
     )

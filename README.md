@@ -21,10 +21,10 @@ This project aims to identify the most efficient and reliable **RAG (Retrieval-A
 | **v1 (Baseline)** | Basic text chunking; **IndexFlatL2** exhaustive search. |
 | **v2 (Advanced)** | Implemented **HNSW** for high-speed indexing; introduced **Hybrid Search** (Dense + BM25); utilized **RRF (Reciprocal Rank Fusion)** and metadata filtering for PubMed. |
 | **v3 (Optimal)** | Built upon v2 with a **Cross-Encoder Re-ranker** for top-k refinement. Selected as the **final version** due to stability and speed. |
-| **v4 (Experimental)** | Optimized chunking for technical docs; applied metadata mapping and context expansion across all sources. |
+| **v4 (Experimental)** | Optimized chunking for technical docs and questions texts; applied metadata mapping and context expansion across all sources. |
 
 ## Quantitative Evaluation
-Due to restricted API access for tools like RAGAS, this project uses a custom suite to quantify performance:
+Due to restricted LLM API access for tools like RAGAS, this project uses a custom suite to quantify performance:
 
 ### Core Definitions
 * $G$: Ground Truth text
@@ -72,21 +72,15 @@ The performance of each version was systematically evaluated using the metrics d
 
 ### Key Observations from Evaluation:
 
-* **Superior Retrieval Precision (MRR):** Version 3 and Version 4 show a significant leap in **MRR (Mean Reciprocal Rank)**, with v3 reaching **0.654** and v4 reaching **0.753**. This indicates that the introduction of the **Re-ranker** effectively pushed the most relevant chunks to the top positions.
+* **Superior Retrieval Precision (MRR):** Version 3 and Version 4 show a significant leap in **MRR (Mean Reciprocal Rank)**, this indicates that the introduction of the **Re-ranker** effectively pushed the most relevant chunks to the top positions.
 * **Elimination of Hallucinations:** While the v1 baseline had a hallucination rate of **1.02%**, iterations v2 through v4 achieved a **0.00% hallucination rate**. This proves that the **Hybrid Search** and **Metadata Filtering** implemented since v2 successfully grounded the LLM in the provided context.
-* **Semantic Consistency:** All versions maintain a high **Answer-Context Similarity (~0.85)**, ensuring that the generated responses are strictly derived from the retrieved documents.
+* **Semantic Consistency:** All versions maintain a high **Answer-Context Similarity (~0.85)**, which shows that the generated responses are strictly derived from the retrieved documents.
 * **Optimization Trade-off:** Although v4 has the highest MRR, **Version 3** was selected as the final architecture because it delivers highly competitive accuracy while maintaining the performance advantages of the **HNSW index** without the additional complexity of the v4 experimental chunking.
 
 
 ## Final Implementation: Version 3
 
 Based on the quantitative benchmarking results, **Version 3** has been selected as the definitive implementation for this project. The complete Python source code for this optimized pipeline can be found in the `src/` directory.
-
-### Why Version 3?
-While Version 4 achieved a higher MRR in experimental settings, Version 3 was chosen for the "production" build due to the following reasons:
-* **Optimal Performance-Accuracy Balance:** It delivers a high MRR (0.654) and a 0% hallucination rate without the added complexity and potential instability of Version 4's experimental chunking logic.
-* **Search Efficiency:** By utilizing the **HNSW (Hierarchical Navigable Small World)** index, Version 3 provides sub-second retrieval latency, making it highly suitable for real-time applications.
-* **Robustness:** The integration of the **Cross-Encoder Re-ranker** consistently ensures that the most semantically relevant medical and technical contexts are prioritized for the LLM.
 
 ### Key Components in `src/`:
 * **Hybrid Retriever:** Combines `BAAI/bge-small-en-v1.5` dense embeddings with BM25 keyword search.

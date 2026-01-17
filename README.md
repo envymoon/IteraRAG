@@ -133,3 +133,8 @@ This example demonstrates the system's ability to synthesize information from mu
 >
 > **Ground Truth:**  "At the end point, a greater decrease from baseline was observed in physician-assessed overall nasal signs and symptoms severity for the ciclesonide group compared with the placebo group (P = .051)."
 >
+
+
+## References
+- **PubMedQA Dataset**: Jin, Q., Dhingra, B., Liu, Z., Cohen, W., & Lu, X. (2019). PubMedQA: A Dataset for Biomedical Research Question Answering. In *Proceedings of EMNLP-IJCNLP 2019*. [https://pubmedqa.github.io/](https://pubmedqa.github.io/)
+- **Qwen2.5-1.5B-Instruct**: [Alibaba Cloud Qwen Team](https://github.com/QwenLM/Qwen2.5)

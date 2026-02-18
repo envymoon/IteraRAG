@@ -29,7 +29,7 @@ Due to restricted LLM API access for tools like RAGAS, this project uses a custo
 ### Core Definitions
 * $G$: Ground Truth text
 * $A$: Generated Answer text
-* $C = \{c_1, c_2, \dots, c_k\}$: Set of top-$k$ retrieved context chunks
+* $C = \{c_1, c_2, \dots, c_k\}$: Set of top-k retrieved context chunks
 * $E(x)$: Embedding vector of text $x$
 * $sim(u, v) = \frac{u \cdot v}{\|u\| \|v\|}$: Cosine similarity between two vectors
 
